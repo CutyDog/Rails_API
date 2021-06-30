@@ -13,9 +13,6 @@ module Api
              message: 'Loaded users', data: @users }
       end
       
-      def new
-      end
-      
       def create
         @user = User.new(user_params)
 
@@ -25,9 +22,6 @@ module Api
           render json: @user.errors, status: :unprocessable_entity
         end  
       end 
-      
-      def edit
-      end
       
       def update
         if @user.update(user_params)
